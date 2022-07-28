@@ -1,2 +1,5 @@
 # 手機遊戲首抽搜索系統
-[![Build Status](https://travis-ci.com/cxz9001/search.svg?token=4GcFSwEKJRZPRwpag48d&branch=master)](https://travis-ci.com/cxz9001/search)
+撰寫於2016/6左右
+
+# 使用技術
+Node.js、Express.js、Mongodb
