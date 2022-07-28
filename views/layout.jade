@@ -1,0 +1,191 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='author', content='虛空幻想')
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // BEGIN GLOBAL MANDATORY STYLES
+    link(href='../fontcss.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+    link(href='../simple-line-icons.min.css', rel='stylesheet', type='text/css')
+    link(href='../bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='../uniform.default.css', rel='stylesheet', type='text/css')
+    link(href='../bootstrap-switch.min.css', rel='stylesheet', type='text/css')
+    // END GLOBAL MANDATORY STYLES
+    // BEGIN THEME STYLES
+    link#style_components(href='../components.css', rel='stylesheet', type='text/css')
+    link(href='../plugins.css', rel='stylesheet', type='text/css')
+    link(href='../layout.css', rel='stylesheet', type='text/css')
+    link#style_color(href='../darkblue.css', rel='stylesheet', type='text/css')
+    link(href='../custom.css', rel='stylesheet', type='text/css')
+    style.
+      .ms-container{
+      width: 550px;
+      }
+      .ms-container:after{
+      content: ".";
+      display: block;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      clear: both;
+      min-height: 0;
+      visibility: hidden;
+      }
+      .ms-container .ms-selectable, .ms-container .ms-selection{
+      background: #fff;
+      color: #555555;
+      float: left;
+      width: 50%;
+      }
+      .ms-container .ms-selection{
+      float: right;
+      }
+      .ms-container .ms-list{
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+      transition: border linear 0.2s, box-shadow linear 0.2s;
+      border: 1px solid #ccc;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      position: relative;
+      height: 400px;
+      padding: 0;
+      overflow-y: auto;
+      }
+      .ms-container .ms-list.ms-focus{
+      border-color: rgba(82, 168, 236, 0.8);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      outline: 0;
+      outline: thin dotted \9;
+      }
+      .ms-container ul{
+      margin: 0;
+      list-style-type: none;
+      padding: 0;
+      }
+      .ms-container .ms-optgroup-container{
+      width: 100%;
+      }
+      .ms-container .ms-optgroup-label{
+      margin: 0;
+      padding: 5px 0px 0px 5px;
+      cursor: pointer;
+      color: #999;
+      }
+      .ms-container .ms-selectable li.ms-elem-selectable,
+      .ms-container .ms-selection li.ms-elem-selection{
+      border-bottom: 1px #eee solid;
+      padding: 2px 10px;
+      color: #555;
+      font-size: 14px;
+      }
+      .ms-container .ms-selectable li.ms-hover,
+      .ms-container .ms-selection li.ms-hover{
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+      background-color: #08c;
+      }
+      .ms-container .ms-selectable li.disabled,
+      .ms-container .ms-selection li.disabled{
+      background-color: #eee;
+      color: #aaa;
+      cursor: text;
+      }
+      .multi-select {
+      right: auto !important;
+      left: -9999px !important;
+      }
+      .imas_color_pink{color:#ff2f92}
+      .imas_color_orange{color:#ff6d3c}
+      .imas_color_yellow{color:#dad807}
+      .imas_color_green{color:#22b700}
+      .imas_color_blue{color:#048eff}
+      .imas_bg_color_pink{background-color:#ff2f92;color:#ffffff}
+      .imas_bg_color_orange{background-color:#ff6d3c;color:#ffffff}
+      .imas_bg_color_yellow{background-color:#dad807;color:#ffffff}
+      .imas_bg_color_green{background-color:#22b700;color:#ffffff}
+      .imas_bg_color_blue{background-color:#048eff;color:#ffffff}
+      /*#spinner1,#spinner2,#spinner3{float: left;}*/
+      .table-striped>tbody>tr:nth-of-type(odd) {
+      background-color: #DDEBF7;
+      }
+      .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+      border-top: 0px solid #ddd;
+      }
+      .md-radio.silverColor label{
+      color: #C0C0C0;
+      }
+      .silverColor label > .check{
+      background-color: #C0C0C0;
+      }
+      .silverColor label > .box{
+      border: 2px solid #C0C0C0;
+      }
+      .md-radio.growStepColor label{
+      color: #048eff;
+      }
+      .growStepColor label > .check{
+      background-color: #048eff;
+      }
+      .growStepColor label > .box{
+      border: 2px solid #048eff;
+      }
+      .table-striped>tbody>tr:nth-of-type(odd) {
+      background-color : transparent;
+      }
+      .tableBlueRow{
+      background-color: #DDEBF7;
+      }
+      .tableWhiteRow{
+      background-color: #FFF;
+      }
+      .white.btn {
+      color: #3598dc;
+      background-color: #FFF;
+      border: 1px solid #048eff;
+      }
+      .blue.btn {
+      border: 1px solid #FFF;
+      }
+      .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+      padding: 6px;
+      }
+    // END THEME STYLES
+    //if lt IE 9
+      script(src='../respond.min.js')
+      script(src='../excanvas.min.js')
+    script(src='../jquery.min.js', type='text/javascript')
+    script(src='../jquery-migrate.min.js', type='text/javascript')
+    // IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip
+    script(src='../jquery-ui.min.js', type='text/javascript')
+    script(src='../bootstrap.min.js', type='text/javascript')
+    script(src='../bootstrap-hover-dropdown.min.js', type='text/javascript')
+    script(src='../jquery.slimscroll.min.js', type='text/javascript')
+    script(src='../jquery.blockui.min.js', type='text/javascript')
+    script(src='../jquery.cokie.min.js', type='text/javascript')
+    script(src='../jquery.uniform.min.js', type='text/javascript')
+    script(src='../bootstrap-switch.min.js', type='text/javascript')
+    // END CORE PLUGINS
+    script(src='../metronic.js', type='text/javascript')
+    script(src='../layout.js', type='text/javascript')
+    script(src='../quick-sidebar.js', type='text/javascript')
+    script(src='../demo.js', type='text/javascript')
+    script(src='../bootstrap.touchspin.js', type='text/javascript')
+    script(src='../jquery.multi-select.js')
+    script(src='../spinner.min.js')
+    script(src='../autosize.min.js', type='text/javascript')
+    title= title
+  body
+    block content

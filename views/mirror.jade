@@ -1,0 +1,459 @@
+extends layout
+
+block content
+  body.page-header-fixed.page-quick-sidebar-over-content
+    // BEGIN HEADER
+    .page-header.navbar.navbar-fixed-top
+      // BEGIN HEADER INNER
+      .page-header-inner
+        // BEGIN LOGO
+        .page-logo
+          a(href='./')
+            img.logo-default(src='../img/logo.png', alt='logo')
+          .menu-toggler.sidebar-toggler
+            // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+        // END LOGO
+        // BEGIN RESPONSIVE MENU TOGGLER
+        a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')
+        // END RESPONSIVE MENU TOGGLER
+        // BEGIN TOP NAVIGATION MENU
+        .top-menu
+          ul.nav.navbar-nav.pull-right
+        // END TOP NAVIGATION MENU
+      // END HEADER INNER
+    // END HEADER
+    .clearfix
+    // BEGIN CONTAINER
+    .page-container
+      // BEGIN SIDEBAR
+      .page-sidebar-wrapper
+        // DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing
+        // DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed
+        .page-sidebar.navbar-collapse.collapse
+          // BEGIN SIDEBAR MENU
+          ul.page-sidebar-menu(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='200')
+            //li.start
+              a(href='javascript:;')
+                i
+                  img(src='../img/.jpg')
+                span.title title
+                span.arrow
+              ul.sub-menu
+                li
+                  a(href='')
+                    i.icon-link
+                    |                     text
+            li.start
+              a(href='javascript:;')
+                i
+                  img(src='../pkmco_icon.png', width='32', height='32')
+                span.title 神奇寶貝 戰棋大師
+                span.arrow
+              ul.sub-menu
+                li
+                  a(href='../pkmco')
+                    i.icon-link
+                    |                     帳號搜尋
+            li.start.active.open
+              a(href='javascript:;')
+                i
+                  img(src='../mirror_icon.png', width='32', height='32')
+                span.title 最終休止符
+                span.arrow
+              ul.sub-menu
+                li
+                  a(href='../mirror')
+                    i.icon-link
+                    |                     帳號搜尋
+          // END SIDEBAR MENU
+      // END SIDEBAR
+      // BEGIN CONTENT
+      .page-content-wrapper
+        .page-content
+          // BEGIN PAGE HEADER
+          h3.page-title
+            | 最終休止符 
+            small -自助帳號搜尋
+          // END PAGE HEADER
+          // BEGIN PAGE CONTENT
+          .row
+            .col-md-10
+              // BEGIN SAMPLE FORM PORTLET
+              .portlet.green.box
+                .portlet-title
+                  .caption
+                    i.fa.fa-cogs
+                    | 提示
+                .portlet-body
+                  .note.note-info
+                    b 第一步
+                    | ：搜索想要的組合。 
+                    br
+                    b 第二步
+                    | ：前往8591賣場，詢問賣家。
+                    br
+                    b 第三步
+                    | ：協商好後開專屬，購買後等待移交。
+                    br
+                    b 第四步
+                    | ：提取帳號資料後，點擊開始畫面，選擇右側的引繼字樣，輸入上下兩行即可(遊戲帳號上行，遊戲密碼下行)。
+                    br
+                    b 第五步
+                    | ：確認完帳號後，回8591領收。
+                    br
+                    b ※
+                    | ：引繼前建議清除遊戲資料(或刪除重裝)，解除安裝Google Play 遊戲(成功引繼後再裝回)，避免引繼失敗
+                    br
+                    hr
+                    |             →8591賣場 :
+                    a(href='http://www.8591.com.tw/mallList-wareDetail.html?id=2231375923' target="_blank") ㊣虛幻㊣ - █最低價█單五星/雙五星/同屬國█自助查詢系統█
+                    br
+              .portlet.bordered.box.blue
+                .portlet-title
+                  #inputSNTitle.caption.font-yellow-sunglo
+                    span.caption-subject.bold.uppercase 1. 搜尋組合 (最多顯示50個結果)
+                  .tools
+                    a#searchCharacterExpand.collapse(href='javascript:;', data-original-title='', title='')
+                .portlet-body(style='display: block;overflow: auto;')
+                  div(style='display: block;overflow: auto;')
+                    | 角色選擇：
+                    br
+                    input#a1(type='checkbox', name='deck', value='1', style='position: absolute;')
+                    img#1.deck(src='../mirror/char/5/スライ.png', onclick='Img_Click(1)', title="スライ")
+                    input#a2(type='checkbox', name='deck', value='2', style='position: absolute;')
+                    img#2.deck(src='../mirror/char/5/ネロ.png', onclick='Img_Click(2)')
+                    input#a3(type='checkbox', name='deck', value='3', style='position: absolute;')
+                    img#3.deck(src='../mirror/char/5/バルザック.png', onclick='Img_Click(3)')
+                    input#a4(type='checkbox', name='deck', value='4', style='position: absolute;')
+                    img#4.deck(src='../mirror/char/5/オラクル.png', onclick='Img_Click(4)')
+                    input#a5(type='checkbox', name='deck', value='5', style='position: absolute;')
+                    img#5.deck(src='../mirror/char/5/メルディア.png', onclick='Img_Click(5)')
+                    input#a6(type='checkbox', name='deck', value='6', style='position: absolute;')
+                    img#6.deck(src='../mirror/char/5/ゼクス.png', onclick='Img_Click(6)')
+                    input#a27(type='checkbox', name='deck', value='27', style='position: absolute;')
+                    img#27.deck(src='../mirror/char/5/フィオ.png', onclick='Img_Click(27)')
+                    hr
+                    input#a7(type='checkbox', name='deck', value='7', style='position: absolute;')
+                    img#7.deck(src='../mirror/char/4/クリフ.png', onclick='Img_Click(7)')
+                    input#a8(type='checkbox', name='deck', value='8', style='position: absolute;')
+                    img#8.deck(src='../mirror/char/4/ヴァーヴィル.png', onclick='Img_Click(8)')
+                    input#a9(type='checkbox', name='deck', value='9', style='position: absolute;')
+                    img#9.deck(src='../mirror/char/4/ラルフ.png', onclick='Img_Click(9)')
+                    input#a10(type='checkbox', name='deck', value='10', style='position: absolute;')
+                    img#10.deck(src='../mirror/char/4/リリア.png', onclick='Img_Click(10)')
+                    input#a11(type='checkbox', name='deck', value='11', style='position: absolute;')
+                    img#11.deck(src='../mirror/char/4/ポルティエ.png', onclick='Img_Click(11)')
+                    input#a12(type='checkbox', name='deck', value='12', style='position: absolute;')
+                    img#12.deck(src='../mirror/char/4/フェルトナ.png', onclick='Img_Click(12)')
+                    input#a13(type='checkbox', name='deck', value='13', style='position: absolute;')
+                    img#13.deck(src='../mirror/char/4/ディスニック.png', onclick='Img_Click(13)')
+                    input#a14(type='checkbox', name='deck', value='14', style='position: absolute;')
+                    img#14.deck(src='../mirror/char/4/ローレ.png', onclick='Img_Click(14)')
+                    input#a15(type='checkbox', name='deck', value='15', style='position: absolute;')
+                    img#15.deck(src='../mirror/char/4/クロクマ.png', onclick='Img_Click(15)')
+                    input#a16(type='checkbox', name='deck', value='16', style='position: absolute;')
+                    img#16.deck(src='../mirror/char/4/シロクマ.png', onclick='Img_Click(16)')
+                    br
+                    input#a17(type='checkbox', name='deck', value='17', style='position: absolute;')
+                    img#17.deck(src='../mirror/char/4/PICO-214.png', onclick='Img_Click(17)')
+                    input#a18(type='checkbox', name='deck', value='18', style='position: absolute;')
+                    img#18.deck(src='../mirror/char/4/サンスー.png', onclick='Img_Click(18)')
+                    input#a19(type='checkbox', name='deck', value='19', style='position: absolute;')
+                    img#19.deck(src='../mirror/char/4/ウーリュー.png', onclick='Img_Click(19)')
+                    input#a20(type='checkbox', name='deck', value='20', style='position: absolute;')
+                    img#20.deck(src='../mirror/char/4/エリーゼ.png', onclick='Img_Click(20)')
+                    input#a21(type='checkbox', name='deck', value='21', style='position: absolute;')
+                    img#21.deck(src='../mirror/char/4/パリス.png', onclick='Img_Click(21)')
+                    input#a22(type='checkbox', name='deck', value='22', style='position: absolute;')
+                    img#22.deck(src='../mirror/char/4/ボムリア.png', onclick='Img_Click(22)')
+                    input#a23(type='checkbox', name='deck', value='23', style='position: absolute;')
+                    img#23.deck(src='../mirror/char/4/リィズ.png', onclick='Img_Click(23)')
+                    input#a24(type='checkbox', name='deck', value='24', style='position: absolute;')
+                    img#24.deck(src='../mirror/char/4/ルビー.png', onclick='Img_Click(24)')
+                    input#a25(type='checkbox', name='deck', value='25', style='position: absolute;')
+                    img#25.deck(src='../mirror/char/4/サファイア.png', onclick='Img_Click(25)')
+                    input#a26(type='checkbox', name='deck', value='26', style='position: absolute;')
+                    img#26.deck(src='../mirror/char/4/ラッテ.png', onclick='Img_Click(26)')
+                    br
+                    input#a28(type='checkbox', name='deck', value='28', style='position: absolute;')
+                    img#28.deck(src='../mirror/char/4/ロラ.png', onclick='Img_Click(28)')
+                    hr
+                    #spinnerEX
+                      input.isLimitEX(type='checkbox')
+                      | 限制5星數量
+                      .input-group.input-small
+                        input#EX.spinner-input.form-control(type='text', maxlength='3', readonly='')
+                        .spinner-buttons.input-group-btn.btn-group-vertical
+                          button.btn.spinner-up.btn-xs.blue(type='button')
+                            i.fa.fa-angle-up
+                          button.btn.spinner-down.btn-xs.blue(type='button')
+                            i.fa.fa-angle-down
+                    br
+                    #spinnerR
+                      input.isLimitR(type='checkbox')
+                      | 限制4星數量
+                      .input-group.input-small
+                        input#R.spinner-input.form-control(type='text', maxlength='3', readonly='')
+                        .spinner-buttons.input-group-btn.btn-group-vertical
+                          button.btn.spinner-up.btn-xs.blue(type='button')
+                            i.fa.fa-angle-up
+                          button.btn.spinner-down.btn-xs.blue(type='button')
+                            i.fa.fa-angle-down
+                    .form-group.form-md-line-input
+                      label.col-md-2.control-label(for='form_control_1') 帳號所屬國
+                      .col-md-10
+                        .md-radio-inline
+                          .md-radio.growStepColor
+                            input#radioCountryN.md-radiobtn(type='radio', name='radioCountry', value='', checked='')
+                            label(for='radioCountryN')
+                              span.inc
+                              span.check
+                              span.box
+                              |                                     不限制
+                          .md-radio.growStepColor
+                            input#radioCountry1.md-radiobtn(type='radio', name='radioCountry', value='1')
+                            label(for='radioCountry1')
+                              span.inc
+                              span.check
+                              span.box
+                              |                                     ヒューマレルム(修瑪王國)
+                          .md-radio.growStepColor
+                            input#radioCountry2.md-radiobtn(type='radio', name='radioCountry', value='2')
+                            label(for='radioCountry2')
+                              span.inc
+                              span.check
+                              span.box
+                              |                                     スペアレルム(斯培亞軍國)
+                          .md-radio.growStepColor
+                            input#radioCountry3.md-radiobtn(type='radio', name='radioCountry', value='3')
+                            label(for='radioCountry3')
+                              span
+                              span.check
+                              span.box
+                              |                                     アニマルレルム(阿里瑪魯獸王國)
+                          .md-radio.growStepColor
+                            input#radioCountry4.md-radiobtn(type='radio', name='radioCountry', value='4')
+                            label(for='radioCountry4')
+                              span
+                              span.check
+                              span.box
+                              |                                     ブラッドレルム(布拉多魔國)
+                          .md-radio.growStepColor
+                            input#radioCountry5.md-radiobtn(type='radio', name='radioCountry', value='5')
+                            label(for='radioCountry5')
+                              span
+                              span.check
+                              span.box
+                              |                                     スカイレルム(斯凱空國)
+                          .md-radio.growStepColor
+                            input#radioCountry6.md-radiobtn(type='radio', name='radioCountry', value='6')
+                            label(for='radioCountry6')
+                              span
+                              span.check
+                              span.box
+                              |                                     ヘルレルム(骸魯秘國)
+                    br
+                    span.input-group-btn.btn-right
+                      button#RSearch.btn.green-haze(type='button') 搜索
+                  #searchResult
+                // END PAGE CONTENT
+            // END CONTENT
+          // END CONTAINER
+          // BEGIN FOOTER
+          .page-footer
+            .page-footer-inner
+              | 2016 © ㊣虛幻㊣.
+            .scroll-to-top
+              i.icon-arrow-up
+      script.
+        jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        QuickSidebar.init(); // init quick sidebar
+        Demo.init(); // init demo features
+        });
+        Array.prototype.remove= function(){
+        var what, a= arguments, L= a.length, ax;
+        while(L && this.length){
+        what= a[--L];
+        while((ax= this.indexOf(what))!= -1){
+        this.splice(ax, 1);
+        }
+        }
+        return this;
+        }
+        $('#spinnerEX').spinner({value:0, min: 0, max: 5});
+        $('#spinnerR').spinner({value:0, min: 0, max: 5});
+        var Gatt = [
+        "",
+        "火",
+        "水",
+        "木",
+        "光",
+        "闇"
+        ];
+        var Gtype = [
+        "",
+        "アタッカー(進攻)",
+        "サポーター(支援)",
+        "ジャマー(妨礙)",
+        "ディフェンダー(防守)",
+        "ヒーロー(英雄)",
+        "キラー(暗殺)"
+        ];
+        var CountryImg = [
+        "",
+        '<img src="../mirror/Country/0.png">',
+        '<img src="../mirror/Country/1.png">',
+        '<img src="../mirror/Country/2.png">',
+        '<img src="../mirror/Country/3.png">',
+        '<img src="../mirror/Country/4.png">',
+        '<img src="../mirror/Country/5.png">'
+        ];
+        var Country = [
+        "",
+        '<img src="../mirror/Country/0.png" width="50" height="50">'+"修瑪王國",
+        '<img src="../mirror/Country/1.png" width="50" height="50">'+"斯培亞軍國",
+        '<img src="../mirror/Country/2.png" width="50" height="50">'+"阿里瑪魯獸王國",
+        '<img src="../mirror/Country/3.png" width="50" height="50">'+"布拉多魔國",
+        '<img src="../mirror/Country/4.png" width="50" height="50">'+"斯凱空國",
+        '<img src="../mirror/Country/5.png" width="50" height="50">'+"骸魯秘國"
+        ];
+        function Img_Click(num)
+        {
+        console.log("OK");
+        var c = "#a" + num;
+        console.log(c);
+        if($(c).prop("checked")){
+        $(c).prop("checked", false);
+
+        }else{
+        $(c).prop("checked", true);
+        }
+        $.uniform.update(c);
+        }
+
+
+
+
+
+        $("#RSearch").click(function(){
+         var btn = $(this);
+        btn.button('loading');
+        co=$('input[name=radioCountry]:checked').val();
+        selector="";
+        EX=$('#EX').val();
+        R=$('#R').val();
+        if($('.isLimitEX').is(':checked')){
+        isLimitEX = "true";
+        }else{
+        isLimitEX  = "false";
+        }
+        if($('.isLimitR').is(':checked')){
+        isLimitR = "true";
+        }else{
+        isLimitR  = "false";
+        }
+        //   isShowR=$(".isShowR").bootstrapSwitch('state');
+        $('input:checkbox:checked[name="deck"]').each(function(i) {
+        selector+= this.value+",";
+        });
+        $.post("/mirror",
+        {
+        selector:selector,
+        ex:EX,
+        r:R,
+        isLimitEX:isLimitEX,
+        isLimitR:isLimitR,
+        co:co
+        },
+        function(data,status){
+        showhtml='<div class="portlet-body"><div class="table-scrollable"><table class="table">';
+        showhtml+='<thead><tr><th>組合ID</th><th>稀有度</th><th>名稱</th><th>職介/屬性</th><th>所屬國</th><th>帳號所屬國</th></thead>';
+        showhtml+= '<tbody>';
+        btn.button('reset');
+        if(data.result!= undefined){
+        alert(data.message);
+        return;
+        }
+
+
+        $.each(data,function(index, value){
+        //console.log(value);
+        id = value.id;
+        co = value.co
+        var decks = value.deck;
+
+        $.each(decks,function(deckindex,deck){
+          if(index%2===0){
+            deckOutput = '<tr class="tableBlueRow">';
+          }else{
+            deckOutput = '<tr class="tableWhiteRow">';
+          }
+          
+
+          if(deckindex==0) {
+          deckOutput+='<td>'+id+'</td>';
+          }else{
+          deckOutput+='<td></td>';
+          }
+
+          deckOutput+='<td>'+deck.rarity+'星'+'</td>';
+          deckOutput+='<td>'+'<img src="../mirror/char/'+deck.rarity+'/'+deck.name+'.png">'+deck.name+'</td>';
+          deckOutput+='<td>'+Gtype[deck.type]+"/"+Gatt[deck.att]+'</td>';
+          deckOutput+='<td>'+Country[deck.co]+'</td>';
+          if(deckindex==0){
+            deckOutput+='<td>'+Country[co]+'</td>';
+          }else{
+            deckOutput+='<td></td>';
+          }
+          deckOutput+='</tr>';
+          showhtml+=deckOutput;
+        });
+        });
+        showhtml+= '</tbody></table></div></div>';
+        $('#searchResult').html(showhtml);
+        });
+        });
+        Array.prototype.remove= function(){
+        var what, a= arguments, L= a.length, ax;
+        while(L && this.length){
+        what= a[--L];
+        while((ax= this.indexOf(what))!= -1){
+        this.splice(ax, 1);
+        }
+        }
+        return this;
+        }
+        var searchSelectedArray = [];
+        $('#pkmco_search_multi_select').multiSelect({
+        selectableHeader: "<div class='custom-header'>可選</div>",
+        selectionHeader: "<div class='custom-header'>已選</div>",
+        selectableOptgroup: true,
+        afterSelect: function(values){
+        $.each(values, function(index,value) {
+        searchSelectedArray.push(value);
+        });
+        },
+        afterDeselect: function(values){
+        $.each(values, function(index,value) {
+        searchSelectedArray.remove(value);
+        });
+        }
+        });
+      script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-77566926-2', 'auto');
+        ga('send', 'pageview');
+  
+      style.
+        .tableBlueRow{
+        background-color: #DDEBF7;
+        }
+        .tableWhiteRow{
+        background-color: #FFFFFF;
+        }

@@ -1,0 +1,282 @@
+extends layout
+
+block content
+  body.page-header-fixed.page-quick-sidebar-over-content
+    // BEGIN HEADER
+    .page-header.navbar.navbar-fixed-top
+      // BEGIN HEADER INNER
+      .page-header-inner
+        // BEGIN LOGO
+        .page-logo
+          a(href='./pkmco')
+            img.logo-default(src='./img/logo.png', alt='logo')
+          .menu-toggler.sidebar-toggler
+            // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+        // END LOGO
+        // BEGIN RESPONSIVE MENU TOGGLER
+        a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')
+        // END RESPONSIVE MENU TOGGLER
+        // BEGIN TOP NAVIGATION MENU
+        .top-menu
+          ul.nav.navbar-nav.pull-right
+        // END TOP NAVIGATION MENU
+      // END HEADER INNER
+    // END HEADER
+    .clearfix
+    // BEGIN CONTAINER
+    .page-container
+      // BEGIN SIDEBAR
+      .page-sidebar-wrapper
+        // DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing
+        // DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed
+        .page-sidebar.navbar-collapse.collapse
+          // BEGIN SIDEBAR MENU
+          ul.page-sidebar-menu(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='200')
+            //li.start
+              a(href='javascript:;')
+                i
+                  img(src='./img/.jpg')
+                span.title title
+                span.arrow
+              ul.sub-menu
+                li
+                  a(href='')
+                    i.icon-link
+                    |                     text
+            li.start.active.open
+              a(href='javascript:;')
+                i
+                  img(src='./pkmco_icon.png', width='32', height='32')
+                span.title 神奇寶貝 戰棋大師
+                span.arrow
+              ul.sub-menu
+                li
+                  a(href='./pkmco')
+                    i.icon-link
+                    |                     帳號搜尋
+            li.start
+              a(href='javascript:;')
+                i
+                  img(src='./mirror_icon.png', width='32', height='32')
+                span.title 最終休止符
+                span.arrow
+              ul.sub-menu
+                li
+                  a(href='./mirror')
+                    i.icon-link
+                    |                     帳號搜尋
+          // END SIDEBAR MENU
+      // END SIDEBAR
+      // BEGIN CONTENT
+      .page-content-wrapper
+        .page-content
+          // BEGIN PAGE HEADER
+          h3.page-title
+            | 神奇寶貝 戰棋大師 
+            small -自助帳號搜尋
+          // END PAGE HEADER
+          // BEGIN PAGE CONTENT
+          .row
+            .col-md-10
+              // BEGIN SAMPLE FORM PORTLET
+              .portlet.green.box
+                .portlet-title
+                  .caption
+                    i.fa.fa-cogs
+                    | 提示
+                .portlet-body
+                  .note.note-info
+                    b 第一步
+                    | ：搜索想要的組合。 
+                    br
+                    b 第二步
+                    | ：前往8591賣場，詢問賣家。
+                    br
+                    b 第三步
+                    | ：協商好後開專屬，購買後等待移交。
+                    br
+                    b 第四步
+                    | ：提取帳號資料後，點擊開始畫面，選擇右側的引繼字樣，輸入上下兩行即可(遊戲帳號上行，遊戲密碼下行)。
+                    br
+                    b 第五步
+                    | ：確認完帳號後，回8591領收。
+                    br
+                    b ※
+                    | ：如引繼不斷提示失敗,可嘗試點擊開始畫面右上角第一個鍵(清除遊戲資料重新下載)或切換網路再引繼。
+                    br
+                    hr
+                    |             →8591賣場 :
+                    a(href='http://www.8591.com.tw/mallList-wareDetail.html?id=2226953730' target="_blank") ㊣虛幻㊣ - EX 雙EX R 帳號 0進度 IOS可用 自助搜索
+                    br
+              .portlet.bordered.box.blue
+                .portlet-title
+                  #inputSNTitle.caption.font-yellow-sunglo
+                    span.caption-subject.bold.uppercase 1. 搜尋組合 (最多顯示10個結果)
+                  .tools
+                    a#searchCharacterExpand.collapse(href='javascript:;', data-original-title='', title='')
+                .portlet-body(style='display: block;overflow: auto;')
+                  div(style='display: block;overflow: auto;')
+                    select#pkmco_search_multi_select.multi-select(multiple='multiple', name='pkmco_search_multi_select[]')
+                      optgroup(label='EX')
+                        option(value='50') 噴火龍
+                        option(value='1') 帝牙盧卡
+                        option(value='53') 帕路奇犽
+                        option(value='93') 妙蛙花
+                        option(value='96') 超夢
+                        option(value='101') 水箭龜
+                      optgroup(label='R')
+                        option(value='3') 太古盔甲
+                        option(value='17') 黑暗鴉
+                        option(value='21') 大鋼蛇
+                        option(value='25') 倫琴貓
+                        option(value='36') 赫拉克羅斯
+                        option(value='40') 喵喵
+                        option(value='43') 盔甲鳥
+                        option(value='45') 怪力
+                        option(value='51') 果然翁
+                        option(value='56') 迷你龍
+                        option(value='57') 伊布
+                        option(value='59') 大甲
+                        option(value='68') 阿勃梭魯
+                        option(value='70') 暴蠑螈
+                        option(value='77') 尖牙陸鯊
+                        option(value='91') 龍王蠍
+                        option(value='102') 乘龍
+                  .ROptions
+                    #spinnerEX
+                      input.isLimitEX(type='checkbox')
+                      | 限制EX數量
+                      .input-group.input-small
+                        input#EX.spinner-input.form-control(type='text', maxlength='3', readonly='')
+                        .spinner-buttons.input-group-btn.btn-group-vertical
+                          button.btn.spinner-up.btn-xs.blue(type='button')
+                            i.fa.fa-angle-up
+                          button.btn.spinner-down.btn-xs.blue(type='button')
+                            i.fa.fa-angle-down
+                    br
+                    #spinnerR
+                      input.isLimitR(type='checkbox')
+                      | 限制R數量
+                      .input-group.input-small
+                        input#R.spinner-input.form-control(type='text', maxlength='3', readonly='')
+                        .spinner-buttons.input-group-btn.btn-group-vertical
+                          button.btn.spinner-up.btn-xs.blue(type='button')
+                            i.fa.fa-angle-up
+                          button.btn.spinner-down.btn-xs.blue(type='button')
+                            i.fa.fa-angle-down
+                    br
+                    span.input-group-btn.btn-right
+                      button#RSearch.btn.green-haze(type='button') 搜索
+                  #searchResult
+                // END PAGE CONTENT
+            // END CONTENT
+          // END CONTAINER
+          // BEGIN FOOTER
+          .page-footer
+            .page-footer-inner
+              | 2016 © ㊣虛幻㊣.
+            .scroll-to-top
+              i.icon-arrow-up
+      script.
+        jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        QuickSidebar.init(); // init quick sidebar
+        Demo.init(); // init demo features
+        });
+        Array.prototype.remove= function(){
+        var what, a= arguments, L= a.length, ax;
+        while(L && this.length){
+        what= a[--L];
+        while((ax= this.indexOf(what))!= -1){
+        this.splice(ax, 1);
+        }
+        }
+        return this;
+        }
+        $('#spinnerEX').spinner({value:0, min: 0, max: 5});
+        $('#spinnerR').spinner({value:0, min: 0, max: 5});
+        $("#RSearch").click(function(){
+         var btn = $(this);
+        btn.button('loading');
+        selector="";
+        EX=$('#EX').val();
+        R=$('#R').val();
+        if($('.isLimitEX').is(':checked')){
+        isLimitEX = "true";
+        }else{
+        isLimitEX  = "false";
+        }
+        if($('.isLimitR').is(':checked')){
+        isLimitR = "true";
+        }else{
+        isLimitR  = "false";
+        }
+        //   isShowR=$(".isShowR").bootstrapSwitch('state');
+        $.each(searchSelectedArray, function(index,value) {
+        selector+=(value)+",";
+        });
+        $.post("/pkmco",
+        {
+        selector:selector,
+        ex:EX,
+        r:R,
+        isLimitEX:isLimitEX,
+        isLimitR:isLimitR
+        },
+        function(data,status){
+        showhtml='<div class="portlet-body"><div class="table-scrollable"><table class="table table-striped table-hover">';
+        showhtml+='<thead><tr><th>組合ID</th><th>人物</th><th>EX</th><th>R</th></thead>';
+        showhtml+= '<tbody>';
+        btn.button('reset');
+        if(data.result!= undefined){
+        alert(data.message);
+        return;
+        }
+        $.each(data,function(index, value){
+        showhtml+='<tr>'+
+        '<td>'+value.id+'</td>'+
+        '<td>'+value.deck+'</td>'+
+        '<td>'+value.EX+'</td>'+
+        '<td>'+value.R+'</td>';
+        showhtml+='</tr>';
+        });
+        showhtml+= '</tbody></table></div></div>';
+        $('#searchResult').html(showhtml);
+        });
+        });
+        Array.prototype.remove= function(){
+        var what, a= arguments, L= a.length, ax;
+        while(L && this.length){
+        what= a[--L];
+        while((ax= this.indexOf(what))!= -1){
+        this.splice(ax, 1);
+        }
+        }
+        return this;
+        }
+        var searchSelectedArray = [];
+        $('#pkmco_search_multi_select').multiSelect({
+        selectableHeader: "<div class='custom-header'>可選</div>",
+        selectionHeader: "<div class='custom-header'>已選</div>",
+        selectableOptgroup: true,
+        afterSelect: function(values){
+        $.each(values, function(index,value) {
+        searchSelectedArray.push(value);
+        });
+        },
+        afterDeselect: function(values){
+        $.each(values, function(index,value) {
+        searchSelectedArray.remove(value);
+        });
+        }
+        });
+      script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-77566926-1', 'auto');
+        ga('send', 'pageview');
+  
